@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -22,6 +23,21 @@ public class TableModel {
         this.filename = filename;
         this.tableName = tableName;
         this.models = models;
+    }
+
+    public boolean isEmpty() {
+        return (filename == null || filename.equals(""))
+                && (tableName == null || tableName.equals(""))
+                && (models == null || models.isEmpty());
+    }
+
+    public static TableModel emptyTableModel() {
+        return TableModel
+                .builder()
+                .filename("")
+                .tableName("")
+                .models(Collections.emptyList())
+                .build();
     }
 
 }

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -17,19 +18,12 @@ public class FullTableModel {
     private TableModel tableModel;
     private List<Map<String, String>> values;
 
-    public TableModel getTableModel() {
-        return tableModel;
+    public static FullTableModel emptyFullTableModel() {
+        return FullTableModel
+                .builder()
+                .tableModel(TableModel.emptyTableModel())
+                .values(Collections.emptyList())
+                .build();
     }
 
-    public void setTableModel(TableModel tableModel) {
-        this.tableModel = tableModel;
-    }
-
-    public List<Map<String, String>> getValues() {
-        return values;
-    }
-
-    public void setValues(List<Map<String, String>> values) {
-        this.values = values;
-    }
 }
