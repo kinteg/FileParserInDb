@@ -1,8 +1,10 @@
 package common.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode
 public class DataModel {
 
     private String key;

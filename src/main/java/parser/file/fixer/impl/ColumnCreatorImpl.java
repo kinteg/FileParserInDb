@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class ColumnCreatorImpl implements ColumnCreator {
 
-    private final Validator columnValidator;
+    private final Validator<String> columnValidator;
 
     private final RandomStringGenerator generator;
 
@@ -45,7 +45,7 @@ public class ColumnCreatorImpl implements ColumnCreator {
 
     private List<String> fixNames(List<String> names) {
         return names.stream()
-                .map(v -> fixName(v))
+                .map(this::fixName)
                 .collect(Collectors.toList());
     }
 
