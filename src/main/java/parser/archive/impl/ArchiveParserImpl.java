@@ -3,24 +3,23 @@ package parser.archive.impl;
 import parser.archive.ArchiveParser;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
 public class ArchiveParserImpl implements ArchiveParser {
 
     @Override
-    public File getFile(File zip, String name) throws IOException {
+    public File getFile(File zip, String name) {
         return null;
     }
 
     @Override
-    public List<File> getFiles(File file) throws IOException {
+    public List<File> getFiles(File file) {
         return Collections.emptyList();
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
     }
 
 }

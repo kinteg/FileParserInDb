@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class TableModelFixerImpl implements TableModelFixer {
 
-    private static final int UPPER_LIMIT_VALUES = 15;
+    private static final int UPPER_LIMIT_VALUES = 50;
 
     private final Validator<String> tableNameValidator;
     private final RandomStringGenerator generator;
