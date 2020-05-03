@@ -60,7 +60,9 @@ public class ColumnCreatorImpl implements ColumnCreator {
         List<DataModel> dataModels = nameColumns.stream()
                 .map(DataModel::new).collect(Collectors.toList());
 
-        dataModels.get(0).setPrimary(true);
+        if (!dataModels.isEmpty()) {
+            dataModels.get(0).setPrimary(true);
+        }
 
         return dataModels;
     }

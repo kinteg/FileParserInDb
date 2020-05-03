@@ -1,19 +1,17 @@
 package main.impl;
 
 import common.factory.ArchiveFactory;
-import common.factory.FileFactory;
 import common.factory.impl.ArchiveFactoryImpl;
-import common.factory.impl.FileFactoryImpl;
 import common.model.FullTableModel;
 import common.target.archive.ArchiveExtension;
 import common.target.archive.TargetArchive;
 import common.target.archive.TargetArchiveImpl;
-import common.target.file.FileExtension;
 import common.target.file.TargetFile;
 import common.target.file.TargetFileImpl;
 import main.SimpleFileParser;
 import parser.archive.ArchiveParser;
 import parser.file.parser.FileParser;
+import parser.file.parser.impl.FileParserImpl;
 
 import java.io.File;
 import java.util.Collections;
@@ -27,13 +25,13 @@ public class SimpleFileParserImpl implements SimpleFileParser {
     private final TargetArchive targetArchive;
     private final TargetFile targetFile;
     private final ArchiveFactory archiveFactory;
-    private final FileFactory fileFactory;
+    private final FileParser fileParser;
 
     public SimpleFileParserImpl() {
         targetArchive = new TargetArchiveImpl();
         archiveFactory = new ArchiveFactoryImpl();
         targetFile = new TargetFileImpl();
-        fileFactory = new FileFactoryImpl();
+        fileParser = new FileParserImpl();
     }
 
     @Override
@@ -82,16 +80,10 @@ public class SimpleFileParserImpl implements SimpleFileParser {
 
     private FullTableModel parse(File file, long limit) {
         if (targetFile.isTargetFile(file.getName())) {
-            FileExtension extension = targetFile.getExtension(file.getName());
-            return parse(extension, file, limit);
+            return fileParser.getFullTable(file, limit);
         } else {
             return FullTableModel.emptyFullTableModel();
         }
-    }
-
-    private FullTableModel parse(FileExtension extension, File file, long limit) {
-        FileParser fileParser = fileFactory.getFileParser(extension);
-        return fileParser.getFullTable(file, limit);
     }
 
 }

@@ -1,39 +1,74 @@
 package common.factory.impl;
 
+import com.opencsv.CSVReader;
 import common.factory.FileFactory;
 import common.target.file.FileExtension;
-import parser.file.parser.FileParser;
-import parser.file.parser.impl.FileParserImpl;
-import parser.file.parser.impl.XlsxParserImpl;
-import parser.file.parser.impl.CsvParserImpl;
-import parser.file.parser.impl.TxtParserImpl;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import parser.file.reader.Reader;
+import parser.file.reader.impl.CsvReaderImpl;
+import parser.file.reader.impl.ReaderImpl;
+import parser.file.reader.impl.TxtReaderImpl;
+import parser.file.reader.impl.XlsxReaderImpl;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FileFactoryImpl implements FileFactory {
 
     @Override
-    public FileParser getFileParser(FileExtension extension) {
+    public Reader getFileReader(FileExtension extension, File file) {
 
-        FileParser fileParser;
+        Reader fileParser;
 
         switch (extension) {
             case CSV:
-                fileParser = new CsvParserImpl();
+                fileParser = createCsvReader(file);
                 break;
 
             case TXT:
-                fileParser = new TxtParserImpl();
+                fileParser = createTxtReader(file);
                 break;
 
             case XLSX:
-                fileParser = new XlsxParserImpl();
+                fileParser = createXlsxReader(file);
                 break;
 
             case NON_TARGET:
             default:
-                fileParser = new FileParserImpl();
+                fileParser = new ReaderImpl();
         }
 
         return fileParser;
+    }
+
+    private Reader createCsvReader(File file) {
+        try {
+            return new CsvReaderImpl(new CSVReader(new FileReader(file)));
+        } catch (IOException e) {
+            return new ReaderImpl();
+        }
+    }
+
+    private Reader createTxtReader(File file) {
+        try {
+            return new TxtReaderImpl(Files.newBufferedReader(
+                    Paths.get(file.getAbsolutePath()),
+                    Charset.forName("windows-1251")));
+        } catch (IOException e) {
+            return new ReaderImpl();
+        }
+    }
+
+    private Reader createXlsxReader(File file) {
+        try {
+            return new XlsxReaderImpl(WorkbookFactory.create(file));
+        } catch (IOException e) {
+            return new ReaderImpl();
+        }
     }
 
 }

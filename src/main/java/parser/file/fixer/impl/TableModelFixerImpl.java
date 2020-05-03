@@ -12,7 +12,10 @@ import validator.Validator;
 import validator.impl.TableNameValidator;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TableModelFixerImpl implements TableModelFixer {
@@ -64,12 +67,21 @@ public class TableModelFixerImpl implements TableModelFixer {
     }
 
     private String getPrimaryKey(TableModel tableModel) {
+        String key;
+
         if (tableModel.getModels().stream().anyMatch(DataModel::isPrimary)) {
-            return tableModel.getModels().stream().filter(DataModel::isPrimary).findFirst().get().getKey();
+            key = tableModel.getModels().stream()
+                    .filter(DataModel::isPrimary)
+                    .findFirst().get().getKey();
+
+        } else if (!tableModel.getModels().isEmpty()) {
+            key = tableModel.getModels().get(0).getKey();
 
         } else {
-            return tableModel.getModels().get(0).getKey();
+            key = "";
         }
+
+        return key;
     }
 
     private void fixFilename(TableModel tableModel, File file) {
@@ -121,23 +133,27 @@ public class TableModelFixerImpl implements TableModelFixer {
 
     private List<String> createType(List<Map<String, String>> values) {
         List<String> types = new ArrayList<>();
-        List<String> keys = new ArrayList<>(values.get(0).keySet());
 
-        for (String key :
-                keys) {
-            List<String> column = new ArrayList<>();
+        if (!values.isEmpty()) {
+            List<String> keys = new ArrayList<>(values.get(0).keySet());
 
-            for (Map<String, String> row :
-                    values) {
-                column.add(row.get(key));
+            for (String key :
+                    keys) {
+                List<String> column = new ArrayList<>();
+
+                for (Map<String, String> row :
+                        values) {
+                    column.add(row.get(key));
+                }
+
+                types.add(typeGenerator.getType(column));
             }
 
-            types.add(typeGenerator.getType(column));
         }
-
 
         return types;
     }
+
 
     private void fixTypes(TableModel tableModel, List<String> types) {
         for (int i = 0; i < tableModel.getModels().size() && i < types.size(); i++) {
