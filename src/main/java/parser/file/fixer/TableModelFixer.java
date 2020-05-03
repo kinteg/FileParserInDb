@@ -1,11 +1,12 @@
 package parser.file.fixer;
 
+import common.model.TableModel;
 import parser.file.reader.Reader;
 
-import javax.swing.table.TableModel;
+import java.io.File;
 
 public interface TableModelFixer {
 
-    TableModel fixTableModel(String filename, TableModel tableModel, Reader reader);
+    TableModel fixTableModel(File file, TableModel tableModel, Reader reader);
 
 }

@@ -5,6 +5,7 @@ import org.junit.Test;
 import parser.file.fixer.impl.ColumnCreatorImpl;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +20,7 @@ public class ColumnCreatorTest {
     }
 
     @Test
-    public void createColumns() {
+    public void createColumnsCompletedTest() {
 
         List<String> nameColumns = Arrays.asList("column1", "column2", "column3", "column4", "column5");
 
@@ -36,6 +37,16 @@ public class ColumnCreatorTest {
         testDataModels.get(0).setPrimary(true);
 
         return testDataModels;
+    }
+
+    @Test
+    public void createColumnsFailedTest() {
+
+        List<DataModel> verifiableDataModels = columnCreator.createColumns(null);
+        List<DataModel> testDataModels = Collections.emptyList();
+
+        assertEquals(verifiableDataModels, testDataModels);
+
     }
 
 }

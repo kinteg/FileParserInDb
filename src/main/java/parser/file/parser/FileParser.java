@@ -5,8 +5,11 @@ import common.model.TableModel;
 import parser.file.reader.Reader;
 
 import java.io.File;
+import java.util.List;
 
 public interface FileParser {
+
+    List<FullTableModel> getFullTable(List<File> files, long limit);
 
     FullTableModel getFullTable(File file, long limit);
 

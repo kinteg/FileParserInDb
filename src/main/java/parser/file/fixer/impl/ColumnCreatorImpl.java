@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class ColumnCreatorImpl implements ColumnCreator {
 
     private final Validator<String> columnValidator;
-
     private final RandomStringGenerator generator;
 
     public ColumnCreatorImpl() {
@@ -58,8 +57,8 @@ public class ColumnCreatorImpl implements ColumnCreator {
     }
 
     private List<DataModel> makeDataModels(List<String> nameColumns) {
-
-        List<DataModel> dataModels = nameColumns.stream().map(DataModel::new).collect(Collectors.toList());
+        List<DataModel> dataModels = nameColumns.stream()
+                .map(DataModel::new).collect(Collectors.toList());
 
         dataModels.get(0).setPrimary(true);
 
