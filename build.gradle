@@ -9,6 +9,9 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://raw.github.com/kinteg/fhgfh/mvn-repo/'
+    }
 }
 
 dependencies {
@@ -17,6 +20,8 @@ dependencies {
     compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
     implementation group: 'com.opencsv', name: 'opencsv', version: '5.1'
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
+    compile group: 'org.example', name: 'untitled1'
 
     compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
