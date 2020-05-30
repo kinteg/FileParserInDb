@@ -1,14 +1,14 @@
 package com.kinteg.FileParserInDb.lib.parser.archive.impl.parser;
 
-import com.kinteg.FileParserInDb.lib.parser.archive.impl.reader.ArchiveHelperImpl;
-import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
-import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveHelper;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveParser;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveReader;
+import com.kinteg.FileParserInDb.lib.parser.archive.impl.reader.ArchiveHelperImpl;
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.reader.TarArchiveInputStreamImpl;
 import com.kinteg.FileParserInDb.lib.validator.ArchiveValidator;
 import com.kinteg.FileParserInDb.lib.validator.impl.ArchiveValidatorImpl;
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 
 import java.io.File;
 import java.io.FileInputStream;

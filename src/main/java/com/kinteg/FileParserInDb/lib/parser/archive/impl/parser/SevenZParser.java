@@ -1,7 +1,5 @@
 package com.kinteg.FileParserInDb.lib.parser.archive.impl.parser;
 
-import org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry;
-import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveHelper;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveParser;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveReader;
@@ -9,6 +7,8 @@ import com.kinteg.FileParserInDb.lib.parser.archive.impl.reader.ArchiveHelperImp
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.reader.SevenZFileImpl;
 import com.kinteg.FileParserInDb.lib.validator.ArchiveValidator;
 import com.kinteg.FileParserInDb.lib.validator.impl.ArchiveValidatorImpl;
+import org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry;
+import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 
 import java.io.File;
 import java.io.IOException;

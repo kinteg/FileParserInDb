@@ -1,7 +1,7 @@
 package com.kinteg.FileParserInDb.lib.parser.archive.impl.reader;
 
-import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveReader;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 
 import java.io.IOException;
 

@@ -1,7 +1,7 @@
 package com.kinteg.FileParserInDb.lib.parser.file.reader.impl;
 
-import com.opencsv.CSVReader;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
+import com.opencsv.CSVReader;
 
 import java.util.Arrays;
 import java.util.Collections;

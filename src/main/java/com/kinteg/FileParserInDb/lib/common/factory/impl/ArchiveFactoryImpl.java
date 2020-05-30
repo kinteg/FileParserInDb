@@ -1,14 +1,14 @@
-                package com.kinteg.FileParserInDb.lib.common.factory.impl;
+package com.kinteg.FileParserInDb.lib.common.factory.impl;
 
+import com.kinteg.FileParserInDb.lib.common.factory.ArchiveFactory;
+import com.kinteg.FileParserInDb.lib.common.target.archive.ArchiveExtension;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveParser;
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.parser.ArchiveParserImpl;
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.parser.SevenZParser;
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.parser.TarParser;
 import com.kinteg.FileParserInDb.lib.parser.archive.impl.parser.ZipParser;
-import com.kinteg.FileParserInDb.lib.common.factory.ArchiveFactory;
-import com.kinteg.FileParserInDb.lib.common.target.archive.ArchiveExtension;
 
-                public class ArchiveFactoryImpl implements ArchiveFactory {
+public class ArchiveFactoryImpl implements ArchiveFactory {
 
     @Override
     public ArchiveParser getArchiveParser(ArchiveExtension extension) {

@@ -1,4 +1,4 @@
-package com.kinteg.FileParserInDb.main;
+package com.kinteg.FileParserInDb.app;
 
 import com.kinteg.FileParserInDb.lib.common.model.TableModel;
 import com.kinteg.FileParserInDb.lib.common.model.TableModelStatus;

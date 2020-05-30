@@ -1,13 +1,13 @@
-package com.kinteg.FileParserInDb.main.impl;
+package com.kinteg.FileParserInDb.app.impl;
 
+import com.kinteg.FileParserInDb.app.SimpleTableCreator;
+import com.kinteg.FileParserInDb.app.UnArchiver;
 import com.kinteg.FileParserInDb.lib.common.model.TableModel;
-import com.kinteg.FileParserInDb.lib.db.creator.impl.PostgresqlCreatorRepo;
-import com.kinteg.FileParserInDb.main.SimpleTableCreator;
 import com.kinteg.FileParserInDb.lib.common.model.TableModelStatus;
 import com.kinteg.FileParserInDb.lib.db.creator.CreatorRepo;
+import com.kinteg.FileParserInDb.lib.db.creator.impl.PostgresqlCreatorRepo;
 import com.kinteg.FileParserInDb.lib.parser.file.parser.SimpleFileParser;
 import com.kinteg.FileParserInDb.lib.parser.file.parser.impl.SimpleFileParserImpl;
-import com.kinteg.FileParserInDb.main.UnArchiver;
 
 import java.io.File;
 import java.sql.Connection;

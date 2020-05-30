@@ -1,14 +1,14 @@
-package com.kinteg.FileParserInDb.main.impl;
+package com.kinteg.FileParserInDb.app.impl;
 
-import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
+import com.kinteg.FileParserInDb.app.UnArchiver;
 import com.kinteg.FileParserInDb.lib.common.factory.ArchiveFactory;
 import com.kinteg.FileParserInDb.lib.common.factory.impl.ArchiveFactoryImpl;
 import com.kinteg.FileParserInDb.lib.common.target.archive.ArchiveExtension;
 import com.kinteg.FileParserInDb.lib.common.target.archive.TargetArchive;
 import com.kinteg.FileParserInDb.lib.common.target.archive.TargetArchiveImpl;
 import com.kinteg.FileParserInDb.lib.common.target.file.TargetFile;
+import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveParser;
-import com.kinteg.FileParserInDb.main.UnArchiver;
 
 import java.io.File;
 import java.util.Collections;

@@ -1,14 +1,14 @@
 package com.kinteg.FileParserInDb.lib.common.factory.impl;
 
 import com.kinteg.FileParserInDb.lib.common.factory.FileFactory;
+import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.impl.CsvReaderImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.impl.ReaderImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.impl.TxtReaderImpl;
-import com.opencsv.CSVReader;
-import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.impl.XlsxReaderImpl;
+import com.opencsv.CSVReader;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import java.io.File;
 import java.io.FileReader;

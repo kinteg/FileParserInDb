@@ -1,4 +1,4 @@
-package com.kinteg.FileParserInDb.main;
+package com.kinteg.FileParserInDb.app;
 
 import java.io.File;
 import java.util.Map;

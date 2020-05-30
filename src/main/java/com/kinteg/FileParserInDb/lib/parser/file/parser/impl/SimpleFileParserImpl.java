@@ -1,11 +1,11 @@
 package com.kinteg.FileParserInDb.lib.parser.file.parser.impl;
 
-import com.kinteg.FileParserInDb.lib.common.model.TableModel;
-import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
 import com.kinteg.FileParserInDb.lib.common.factory.FileFactory;
 import com.kinteg.FileParserInDb.lib.common.factory.impl.FileFactoryImpl;
+import com.kinteg.FileParserInDb.lib.common.model.TableModel;
 import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
 import com.kinteg.FileParserInDb.lib.common.target.file.TargetFile;
+import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.fixer.TableModelFixer;
 import com.kinteg.FileParserInDb.lib.parser.file.fixer.impl.TableModelFixerImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.parser.SimpleFileParser;

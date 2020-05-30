@@ -2,14 +2,14 @@ package com.kinteg.FileParserInDb.lib.parser.file.fixer.impl;
 
 import com.kinteg.FileParserInDb.lib.common.model.DataModel;
 import com.kinteg.FileParserInDb.lib.common.model.TableModel;
+import com.kinteg.FileParserInDb.lib.parser.file.fixer.ColumnCreator;
+import com.kinteg.FileParserInDb.lib.parser.file.fixer.TableModelFixer;
 import com.kinteg.FileParserInDb.lib.parser.file.fixer.TypeGenerator;
+import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
 import com.kinteg.FileParserInDb.lib.validator.Validator;
 import com.kinteg.FileParserInDb.lib.validator.impl.TableNameValidator;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.text.RandomStringGenerator;
-import com.kinteg.FileParserInDb.lib.parser.file.fixer.ColumnCreator;
-import com.kinteg.FileParserInDb.lib.parser.file.fixer.TableModelFixer;
-import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
 
 import java.io.File;
 import java.util.*;

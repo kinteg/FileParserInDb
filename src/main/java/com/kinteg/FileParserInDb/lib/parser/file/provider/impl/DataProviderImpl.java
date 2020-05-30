@@ -3,7 +3,10 @@ package com.kinteg.FileParserInDb.lib.parser.file.provider.impl;
 import com.kinteg.FileParserInDb.lib.parser.file.provider.DataProvider;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DataProviderImpl implements DataProvider {
     @Override

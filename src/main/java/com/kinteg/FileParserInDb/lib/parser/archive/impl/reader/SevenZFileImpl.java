@@ -1,7 +1,7 @@
 package com.kinteg.FileParserInDb.lib.parser.archive.impl.reader;
 
-import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 import com.kinteg.FileParserInDb.lib.parser.archive.ArchiveReader;
+import org.apache.commons.compress.archivers.sevenz.SevenZFile;
 
 import java.io.IOException;
 

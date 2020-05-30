@@ -1,12 +1,11 @@
 package com.kinteg.FileParserInDb.lib.common.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
-@EqualsAndHashCode
 @Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class DataModel {
 
     private String key;
@@ -25,10 +24,13 @@ public class DataModel {
         this(key, "TEXT", primary);
     }
 
-    public DataModel(String key, String type, boolean primary) {
-        this.key = key;
-        this.type = type;
-        this.primary = primary;
+    public static DataModel createEmptyDataModel() {
+        return DataModel
+                .builder()
+                .key("")
+                .type("")
+                .primary(false)
+                .build();
     }
 
 }

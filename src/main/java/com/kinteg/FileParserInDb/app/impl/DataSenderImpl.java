@@ -1,19 +1,19 @@
-package com.kinteg.FileParserInDb.main.impl;
+package com.kinteg.FileParserInDb.app.impl;
 
-import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
-import com.kinteg.FileParserInDb.lib.db.sender.impl.PostgreSqlSenderRepoImpl;
-import com.kinteg.FileParserInDb.main.DataSender;
+import com.kinteg.FileParserInDb.app.DataSender;
+import com.kinteg.FileParserInDb.app.UnArchiver;
 import com.kinteg.FileParserInDb.lib.common.factory.FileFactory;
 import com.kinteg.FileParserInDb.lib.common.factory.impl.FileFactoryImpl;
 import com.kinteg.FileParserInDb.lib.common.model.DataModel;
 import com.kinteg.FileParserInDb.lib.common.model.TableModel;
 import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
 import com.kinteg.FileParserInDb.lib.common.target.file.TargetFile;
+import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
 import com.kinteg.FileParserInDb.lib.db.exporter.ColumnExporterRepo;
 import com.kinteg.FileParserInDb.lib.db.exporter.impl.PostgreSqlColumnExporterRepo;
 import com.kinteg.FileParserInDb.lib.db.sender.SenderRepo;
+import com.kinteg.FileParserInDb.lib.db.sender.impl.PostgreSqlSenderRepoImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
-import com.kinteg.FileParserInDb.main.UnArchiver;
 
 import java.io.File;
 import java.sql.Connection;

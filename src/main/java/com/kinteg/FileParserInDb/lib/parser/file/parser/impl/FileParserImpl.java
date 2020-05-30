@@ -1,19 +1,19 @@
 package com.kinteg.FileParserInDb.lib.parser.file.parser.impl;
 
+import com.kinteg.FileParserInDb.lib.common.factory.FileFactory;
+import com.kinteg.FileParserInDb.lib.common.factory.impl.FileFactoryImpl;
 import com.kinteg.FileParserInDb.lib.common.model.DataModel;
 import com.kinteg.FileParserInDb.lib.common.model.FullTableModel;
 import com.kinteg.FileParserInDb.lib.common.model.TableModel;
+import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
+import com.kinteg.FileParserInDb.lib.common.target.file.TargetFile;
 import com.kinteg.FileParserInDb.lib.common.target.file.TargetFileImpl;
+import com.kinteg.FileParserInDb.lib.parser.file.fixer.TableModelFixer;
 import com.kinteg.FileParserInDb.lib.parser.file.fixer.impl.TableModelFixerImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.parser.FileParser;
 import com.kinteg.FileParserInDb.lib.parser.file.provider.DataProvider;
 import com.kinteg.FileParserInDb.lib.parser.file.provider.impl.DataProviderImpl;
 import com.kinteg.FileParserInDb.lib.parser.file.reader.Reader;
-import com.kinteg.FileParserInDb.lib.common.factory.FileFactory;
-import com.kinteg.FileParserInDb.lib.common.factory.impl.FileFactoryImpl;
-import com.kinteg.FileParserInDb.lib.common.target.file.FileExtension;
-import com.kinteg.FileParserInDb.lib.common.target.file.TargetFile;
-import com.kinteg.FileParserInDb.lib.parser.file.fixer.TableModelFixer;
 
 import java.io.File;
 import java.util.List;
